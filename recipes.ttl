@@ -1,0 +1,279 @@
+@prefix : <https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes> .
+
+<https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes> rdf:type owl:Ontology ;
+                                                                      owl:versionIRI <https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes/0.1> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#hasAmount
+:hasAmount rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :amountunit ;
+           rdfs:range [ rdf:type owl:Restriction ;
+                        owl:onProperty :amount ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange owl:rational
+                      ] .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#hasAmountunit
+:hasAmountunit rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :ingredient ;
+               rdfs:range :amountunit .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#hasComponent
+:hasComponent rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :ingredient ;
+              rdfs:range :component .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#hasIngredient
+:hasIngredient rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :recipe ;
+               rdfs:range :ingredient .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#hasStep
+:hasStep rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :recipe ;
+         rdfs:range :step .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#amount
+:amount rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :amountunit ;
+        rdfs:range xsd:int .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :step ;
+                rdfs:range xsd:string .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :component ;
+         rdfs:range xsd:Name .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#hasStepNumber
+:hasStepNumber rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :step ;
+               rdfs:range xsd:int .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdfs:domain :recipe ;
+    rdfs:range xsd:long .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#amountunit
+:amountunit rdf:type owl:Class .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#beef
+:beef rdf:type owl:Class ;
+      rdfs:subClassOf :meat .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#broccoli
+:broccoli rdf:type owl:Class ;
+          rdfs:subClassOf :vegetable .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#butter
+:butter rdf:type owl:Class ;
+        rdfs:subClassOf :fat .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#carrot
+:carrot rdf:type owl:Class ;
+        rdfs:subClassOf :vegetable .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#chili
+:chili rdf:type owl:Class ;
+       rdfs:subClassOf :spice .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#component
+:component rdf:type owl:Class .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#deciliter
+:deciliter rdf:type owl:Class ;
+           rdfs:subClassOf :amountunit .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#fat
+:fat rdf:type owl:Class ;
+     rdfs:subClassOf :component .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#fish
+:fish rdf:type owl:Class ;
+      rdfs:subClassOf :seafood .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#garlic
+:garlic rdf:type owl:Class ;
+        rdfs:subClassOf :spice .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#ginger
+:ginger rdf:type owl:Class ;
+        rdfs:subClassOf :spice .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#gram
+:gram rdf:type owl:Class ;
+      rdfs:subClassOf :amountunit .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#green_chili_fresh
+:green_chili_fresh rdf:type owl:Class ;
+                   rdfs:subClassOf :chili .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#ingredient
+:ingredient rdf:type owl:Class .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#meat
+:meat rdf:type owl:Class ;
+      rdfs:subClassOf :component .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#mutton
+:mutton rdf:type owl:Class ;
+        rdfs:subClassOf :meat .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#number
+:number rdf:type owl:Class ;
+        rdfs:subClassOf :amountunit .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#oil
+:oil rdf:type owl:Class ;
+     rdfs:subClassOf :fat .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#okra
+:okra rdf:type owl:Class ;
+      rdfs:subClassOf :vegetable .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#onion
+:onion rdf:type owl:Class ;
+       rdfs:subClassOf :vegetable .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#pork
+:pork rdf:type owl:Class ;
+      rdfs:subClassOf :meat .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#recipe
+:recipe rdf:type owl:Class .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#red_chili_fresh
+:red_chili_fresh rdf:type owl:Class ;
+                 rdfs:subClassOf :chili .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#red_chili_powder
+:red_chili_powder rdf:type owl:Class ;
+                  rdfs:subClassOf :chili .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#red_onion
+:red_onion rdf:type owl:Class ;
+           rdfs:subClassOf :onion .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#salt
+:salt rdf:type owl:Class ;
+      rdfs:subClassOf :spice .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#seafood
+:seafood rdf:type owl:Class ;
+         rdfs:subClassOf :meat .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#shrimp
+:shrimp rdf:type owl:Class ;
+        rdfs:subClassOf :seafood .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#spice
+:spice rdf:type owl:Class ;
+       rdfs:subClassOf :component .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#spinach
+:spinach rdf:type owl:Class ;
+         rdfs:subClassOf :vegetable .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#step
+:step rdf:type owl:Class .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#tablespoon
+:tablespoon rdf:type owl:Class ;
+            rdfs:subClassOf :amountunit .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#teaspoon
+:teaspoon rdf:type owl:Class ;
+          rdfs:subClassOf :amountunit .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#tomato
+:tomato rdf:type owl:Class ;
+        rdfs:subClassOf :vegetable .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#vegetable
+:vegetable rdf:type owl:Class ;
+           rdfs:subClassOf :component .
+
+
+###  https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes#yellow_onion
+:yellow_onion rdf:type owl:Class ;
+              rdfs:subClassOf :onion .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
