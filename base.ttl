@@ -7,7 +7,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.lemontree.se/ontologies/indiancooking/> .
 
-<https://github.com/Vinterhav/IndianCooking/blob/ontologies/base.ttl> rdf:type owl:Ontology ;
+<https://github.com/Vinterhav/IndianCooking/blob/ontologies/base.ttl> rdf:type owl:Ontology .
 
 <https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes.ttl> rdf:type owl:Ontology ;
   owl:imports <https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes.ttl> ;
