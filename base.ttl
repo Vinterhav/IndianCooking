@@ -9,7 +9,7 @@
 
 <https://github.com/Vinterhav/IndianCooking/blob/ontologies/base.ttl> rdf:type owl:Ontology ;
 
-<https://github.com/Vinterhav/IndianCooking/blob/main/recipes.ttl> rdf:type owl:Ontology ;
+<https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes.ttl> rdf:type owl:Ontology ;
   owl:imports <https://github.com/Vinterhav/IndianCooking/blob/ontologies/recipes.ttl> ;
   dc:creator "Magnus Vinterhav" ;
   rdfs:comment """This work is done with the dual purpose of understanding rdf, owl and semantic modeling as well as learning a bit about indian cooking.""" .
